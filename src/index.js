@@ -5,8 +5,8 @@ module.exports = function toReadable(number) {
     let twelveToNinety = ['twelve', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
     if (number === 0) { return 'zero' };
+    if (number < 10 && number !== 0) { return lessThanTen[number] };
 
-    if (number < 10 && number !== 0) { return lessThanTen[number] }
-    else if (number >= 10 && number < 20) { return tenToNineteen[number - 10] }
-    else { return twelveToNinety[Math.floor(number / 10)] + " " + lessThanTen[number % 10] };
+    if (number >= 10 && number < 20) { return tenToNineteen[number - 10] };
+    //else { return twelveToNinety[Math.floor(number / 10)] + " " + lessThanTen[number % 10] };
 }
